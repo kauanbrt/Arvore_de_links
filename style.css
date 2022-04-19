@@ -1,0 +1,183 @@
+/* GLOBAL */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+:root{
+    --transition-time: .2s;
+    --bg-main-color:#2f2723;
+    --light-yellow: #EFC764;
+    --light-orange: #E68E7B;
+    --light-blue: #97D4D9;
+    --light-green: #B3DFD3;
+    --light-pink: #FEAFBE;
+    font-size: 16px;
+    color: #fff;
+    font-family: 'Josefin Sans', sans-serif;
+    text-align: center;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+html{
+    overflow: hidden;
+}
+
+body{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bg-main-color);
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.mg-bottom-10{
+    margin-bottom: 10px;
+}
+
+.no-margin{
+    margin: 0px !important;
+}
+
+/* BALLS */
+/* BALL 1 */
+.ball-1{
+    position: absolute;
+    height: 70%;
+    aspect-ratio: 1;
+    background: linear-gradient(115deg, var(--light-yellow), var(--light-orange));
+    border-radius: 50%;
+    top: -18%;
+    left: 10%;
+    z-index: -1;
+}
+
+/* BALL 2 */
+.ball-2{
+    position: absolute;
+    height: 40%;
+    aspect-ratio: 1;
+    background: linear-gradient(115deg, var(--light-blue), var(--light-green));
+    border-radius: 50%;
+    bottom: 10%;
+    right: 20%;
+    z-index: -1;
+}
+
+/* SCREEN */
+.screen{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* CARD */
+.card{
+    position: relative;
+    width: 400px;
+    padding: 44px 22px;
+    height: max-content;
+    background-color: rgba(255, 255, 255, .1);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, .4);
+    backdrop-filter: blur(20px);
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, .25);
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* CARD HEADER */
+.card-header{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-phot{
+    width: 40%;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, .4);
+}
+
+.person-name{
+    font-size: 1.5rem;
+}
+
+/* CARD BODY */
+.data-body{
+    display: flex;
+    justify-content: center;
+    height: 1.2rem;
+    padding: 15px 0px;
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, .1);
+    border: 1px solid rgba(255, 255, 255, .4);
+    border-radius: 35px;
+    text-decoration: none;
+    color: #fff;
+    clip-path: polygon(0% 100%, 0% 0%, 100% 0%, 100% 100%);
+}
+
+.data-body:hover .data-content{
+    top: calc(-100% - 1.2rem);
+    transition: ease-in var(--transition-time);
+}
+
+.data-body:hover path{
+    fill: var(--light-pink);
+}
+
+.data-body:hover{
+    color: var(--light-pink);
+    transition: ease-in var(--transition-time);
+}
+
+.data-content{
+    position: relative;
+    top: 0%;
+    transition: ease-out var(--transition-time);
+}
+
+.name-icon{
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+}
+
+.svg-icon{
+    height: 1.2rem;
+}
+
+.svg-icon path{
+    fill: #fff;
+}
+
+/* MEDIA QUERY */
+@media only screen and (max-width: 1000px){
+    .ball-1{
+        left: -40%;
+    }
+
+    .ball-2{
+        right: -5%;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .ball-1{
+        left: -90%;
+    }
+
+    .ball-2{
+        right: -30%;
+    }
+}
